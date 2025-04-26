@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Whiteboard</title>
+</head>
+<body>
+    <h1>Welcome to Cloud Whiteboard</h1>
+
+    <!-- Formulario para agregar notas -->
+    <form method="POST">
+        <label for="note">Write a note:</label>
+        <textarea id="note" name="note" rows="4" cols="50"></textarea><br><br>
+        <button type="submit">Add Note</button>
+    </form>
+
+    <h2>Notes:</h2>
+    <ul>
+        <!-- Aquí se mostrarán las notas -->
+        {% for note in notes %}
+            <li>{{ note }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+<!--
+    Este es un archivo HTML que sirve como plantilla para la aplicación de pizarra en la nube.
+    Utiliza Jinja2 para renderizar las notas almacenadas en el servidor.
+    El formulario permite a los usuarios agregar nuevas notas, que se muestran en una lista.
+    El archivo HTML incluye un formulario para agregar notas y una lista para mostrar las notas existentes.
+    El formulario envía una solicitud POST al servidor cuando se envía, y el servidor maneja la lógica para agregar la nota a la lista.
